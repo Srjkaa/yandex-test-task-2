@@ -10,7 +10,7 @@
      * @returns {number} кол-во островов
      */
     let point = 0;
-    let shift = 1;
+    const shift = 1;
     let checked = [];
 
     function solution(map) {
@@ -38,16 +38,16 @@
     let positiveShift = true;
     let negativeShift = true;
     for (let i = x, j = y; ((j < map[0].length) && (positiveShift)); j++) {
-        if (map[i][j+shift] === 1 && notInChecked(i, j+shift)) {
-            point = [i,j+shift];
+        if (map[i][j + shift] === 1 && notInChecked(i,j + shift)) {
+            point = [i,j + shift];
             checked.push(point);
         } else {
             positiveShift = false;
         }
     }
     for (let i = x, j = y; ((j >= 0) && (negativeShift)); j--) {
-        if (map[i][j-shift] === 1 && notInChecked(i, j-shift)) {
-            point = [i,j-shift];
+        if (map[i][j - shift] === 1 && notInChecked(i,j - shift)) {
+            point = [i,j - shift];
             checked.push(point);
         } else {
             negativeShift = false;
@@ -59,16 +59,16 @@
     let positiveShift = true;
     let negativeShift = true;
     for (let i = x, j = y; ((i < map.length) && (i != map.length - 1) && (positiveShift)); i++) {
-        if (map[i+shift][j] === 1 && notInChecked(i+shift, j)) {
-            point = [i+shift,j];
+        if (map[i + shift][j] === 1 && notInChecked(i + shift, j)) {
+            point = [i + shift,j];
             checked.push(point);
         } else {
             positiveShift = false;
         }
     }
     for (let i = x, j = y; ((i > 0) && (negativeShift)); i--) {
-        if (map[i-shift][j] === 1 && notInChecked(i-shift, j)) {
-            point = [i-shift,j];
+        if (map[i - shift][j] === 1 && notInChecked(i - shift, j)) {
+            point = [i - shift,j];
             checked.push(point);
         } else {
             negativeShift = false;
