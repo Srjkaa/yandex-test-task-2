@@ -22,8 +22,9 @@
         for (let r = 0; r < rowsLength; ++r) {
             for (let c = 0; c < colsLength; ++c) {
                 if (map[r][c] === 1 && notInChecked(r, c)) {
-                    point = [r,c];
+                    point = [r, c];
                     checked.push(point);
+
                     while (checkedIndex < checked.length) {
                         horizontalShift(map, checked[checkedIndex][0], checked[checkedIndex][1]);
                         verticalShift(map, checked[checkedIndex][0], checked[checkedIndex][1]);
@@ -42,8 +43,8 @@
         const length = map[0].length;
 
         for (let i = x, j = y; ((j < length) && (positiveShift)); ++j) {
-            if (map[i][j + shift] === 1 && notInChecked(i,j + shift)) {
-                point = [i,j + shift];
+            if (map[i][j + shift] === 1 && notInChecked(i, j + shift)) {
+                point = [i, j + shift];
                 checked.push(point);
             } else {
                 positiveShift = false;
@@ -52,7 +53,7 @@
 
         for (let i = x, j = y; ((j >= 0) && (negativeShift)); --j) {
             if (map[i][j - shift] === 1 && notInChecked(i,j - shift)) {
-                point = [i,j - shift];
+                point = [i, j - shift];
                 checked.push(point);
             } else {
                 negativeShift = false;
@@ -67,7 +68,7 @@
 
         for (let i = x, j = y; ((i < length) && (i !== length - 1) && (positiveShift)); ++i) {
             if (map[i + shift][j] === 1 && notInChecked(i + shift, j)) {
-                point = [i + shift,j];
+                point = [i + shift, j];
                 checked.push(point);
             } else {
                 positiveShift = false;
@@ -76,7 +77,7 @@
 
         for (let i = x, j = y; ((i > 0) && (negativeShift)); --i) {
             if (map[i - shift][j] === 1 && notInChecked(i - shift, j)) {
-                point = [i - shift,j];
+                point = [i - shift, j];
                 checked.push(point);
             } else {
                 negativeShift = false;
@@ -98,7 +99,7 @@
                 return false;
             }
         }
-        return true;    
+        return true;
     }
 
     root.SHRI_ISLANDS.solution = solution;
