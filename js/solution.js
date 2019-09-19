@@ -9,6 +9,7 @@
      * @param {number[][]} map карта островов представленная двумерной матрицей чисел
      * @returns {number} кол-во островов
      */
+
     let point = 0;
     let checked = [];
     const shift = 1;
